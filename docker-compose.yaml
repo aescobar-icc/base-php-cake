@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+  base-php-cake:
+    container_name: "base-php-cake"
+    image: "aescobaricc/base-php-cake:1.0.5"
+    build: 
+      context: .
+      dockerfile: dockerfile
+    # volumes:
+    #   - type: bind
+    #     source: ./php.ini-production
+    #     target: /usr/local/etc/php/php.ini-production
+    volumes:
+      - "./etc:/usr/local/etc/php/"
+
